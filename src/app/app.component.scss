@@ -114,4 +114,9 @@
    		 max-width: 540px;
    		 margin: 1em;
 	}
+
+	.column-50{
+		flex         : 0 0 43%;
+		max-width    : 43%;
+	}
 }
