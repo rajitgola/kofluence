@@ -10,7 +10,7 @@
     <section class="searchResults">
         <section>
             <h4 class="header-title">
-                You may also search for:
+                <strong>You may also search for:</strong>
             </h4>
             <div class="searchSuggestions">
                 <a *ngFor="let suggestion of searchSuggestions">
@@ -20,30 +20,36 @@
             </div>
         </section>
 
-        <section class="trends">
+        <section class="trends d-flex j-center">
             <div>
-                <h2><strong>200k</strong></h2>
-                <p>Number of people talking about #fashion , #shoes</p>
+                <h2 class="text-center"><strong>200k</strong></h2>
+                <p class="text-center">Number of people talking about #fashion , #shoes</p>
             </div>
             <div>
-                <h2><strong>20k</strong></h2>
-                <p>Number of Kofluence influencers talking about #fashion , #shoes</p>
+                <h2 class="text-center"><strong>20k</strong></h2>
+                <p class="text-center">Number of Kofluence influencers talking about #fashion , #shoes</p>
             </div>
         </section>
 
         <section class="posts">
-            <div>
+            <div class="d-flex j-center headings">
                 <a class="link__post active">Top Posts</a>
                 <a class="link__post">Latest Posts</a>
             </div>
-            <div class="results row">
+            <div class="results row j-center">
                 <div class="postContainer column-50"
                     *ngFor="let post of posts">
                     <div class="imgContainer"  
                         [ngStyle]="{'background-image':'url(assets/' + post?.images + '.png)'}">
                     </div>
-                    <span class="views">{{post?.views}}</span>
-                    <span class="likes">{{post?.likes}}</span>
+                    <span class="views icon__float">
+                        <i class="fa fa-eye"></i>
+                        {{post?.views}}
+                    </span>
+                    <span class="likes icon__float">
+                        <i class="fa fa-heart"></i>
+                        {{post?.liked}}
+                    </span>
                 </div>
             </div>
         </section>

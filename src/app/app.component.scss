@@ -10,9 +10,13 @@
 	flex-wrap   : wrap;
 }
 
+.text-center{
+	text-align: center;
+}
+
 .column-50{
-	flex         : 0 0 47%;
-	max-width    : 47%;
+	flex         : 0 0 45%;
+	max-width    : 45%;
 	padding-left : 10px;
 	padding-right: 10px;
 	position     : relative;
@@ -21,7 +25,11 @@
 
 .container{
 	max-width: 960px;
-	margin   :  0 auto ;
+	margin   :  1em auto ;
+}
+
+.j-center{
+	justify-content : space-around;
 }
 
 .searchSuggestions{
@@ -30,15 +38,18 @@
 	justify-content: space-around;
 	a{
 		width        : 100%;
-		background   : #FFBF00;
+		background   : #ffdf7f;
 		color        : #000000;
 		margin       : 0 1em;
 		border-radius: 5px;
+		text-align: center;
 	}
 }
 
 .posts{
 	.postContainer{
+		position: relative;
+		margin: 10px 0 ;
 		.imgContainer{
 			min-height         : 250px;
 			height             : auto;
@@ -46,5 +57,61 @@
 			background-size    : cover;
 			background-position: center;
 		}
+		.icon__float{
+			position: absolute;
+			color: white;
+			line-height: 13px;
+			i.fa{
+				margin-right: 10px;
+			}
+		}
+		.views{
+			left: 10%;
+			bottom:  20% ;
+		}
+		.likes{
+			left: 10%;
+			bottom: 10%;
+		}
+	}
+
+	.headings{
+		a{
+		    font-size: 24px;
+		    padding: 5px 30px;
+		    &.active{
+		    	border-bottom: 2px solid #ffbf00;
+		    }
+		}
+	}
+}
+
+.trends{
+	div{
+		margin: 0em 1em ;
+	}
+	h2{
+		font-size: 34px;
+	}
+}
+
+.posts , .trends{
+	margin: 1em;
+}
+
+
+
+///Responsive
+
+@media (min-width: 768px){
+	.container {
+	    max-width: 720px;
+	}
+}
+
+@media (max-width: 576px){
+	.container {
+   		 max-width: 540px;
+   		 margin: 1em;
 	}
 }
