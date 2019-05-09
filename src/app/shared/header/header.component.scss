@@ -1,0 +1,15 @@
+header{
+	background: black;
+	height    : 55px;
+	display   : block;
+	width     : 100% ;
+
+	.headerItem {
+		display        : flex;
+		justify-content: space-between;
+		padding        : 10px;
+		a{
+			color: white;
+		}
+	}
+}

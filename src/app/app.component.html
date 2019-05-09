@@ -1,21 +1,60 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<app-header></app-header>
+
+<section class="container">
+    <section class="searchContainer">
+        <div>
+            <tag-input [(ngModel)]='items' [placeholder]="'Enter to Search'" (ngModelChange)="onNewSearch($event)"></tag-input>
+        </div>
+    </section>
+
+    <section class="searchResults">
+        <section>
+            <h4 class="header-title">
+                You may also search for:
+            </h4>
+            <div class="searchSuggestions">
+                <a *ngFor="let suggestion of searchSuggestions">
+                    <h3><strong>#{{suggestion?.hashtag}}</strong></h3>
+                    <p>{{suggestion?.posts}}</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="trends">
+            <div>
+                <h2><strong>200k</strong></h2>
+                <p>Number of people talking about #fashion , #shoes</p>
+            </div>
+            <div>
+                <h2><strong>20k</strong></h2>
+                <p>Number of Kofluence influencers talking about #fashion , #shoes</p>
+            </div>
+        </section>
+
+        <section class="posts">
+            <div>
+                <a class="link__post active">Top Posts</a>
+                <a class="link__post">Latest Posts</a>
+            </div>
+            <div class="results row">
+                <div class="postContainer column-50"
+                    *ngFor="let post of posts">
+                    <div class="imgContainer"  
+                        [ngStyle]="{'background-image':'url(assets/' + post?.images + '.png)'}">
+                    </div>
+                    <span class="views">{{post?.views}}</span>
+                    <span class="likes">{{post?.likes}}</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="startCampaign">
+                <a></a>
+            </div>    
+        </section>
+
+    </section>
+</section>
 
 <router-outlet></router-outlet>
